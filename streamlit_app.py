@@ -379,7 +379,7 @@ fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
                                  x=x_grid_bc, y=y_grid_bc,
                                  colorscale=darker_blues,
                                  colorbar=dict(
-                                        title="",
+                                        title=dict(text=""),
                                         titleside='right',
                                         titlefont=dict(size=14, color='grey'),  
                                         tickfont=dict(size=12, color='grey'),   
@@ -399,7 +399,7 @@ fig_bus.update_layout(
         font=dict(color='black')
     ),
     scene=dict(
-        xaxis_title="",
+        xaxis_title=dict(text=""),
         xaxis=dict(
             tickvals=xaxis_ticks_bc, 
             ticktext=xaxis_labels_bc,
