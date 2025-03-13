@@ -912,7 +912,7 @@ fig_index.update_layout(
     ),
     plot_bgcolor='white',  
     paper_bgcolor='white',  
-    template='plotly_white',
+    #template='plotly_white',
 )
 
 fig_divergence_monitor.plotly_chart(fig_index, use_container_width=True)
@@ -1006,7 +1006,7 @@ with col1_2d:
             gridwidth=1,
             zeroline=False
         ),
-        template='plotly_white',
+        #template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
         font=dict(color='black'),
@@ -1048,7 +1048,7 @@ with col2_2d:
             gridwidth=1,
             zeroline=False
         ),
-        template='plotly_white',
+        #template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
         font=dict(color='black'),
