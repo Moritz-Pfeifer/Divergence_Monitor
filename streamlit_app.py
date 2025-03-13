@@ -385,7 +385,7 @@ fig_bus.update_layout(
     title=dict(
         text="Business Cycle Divergences",
         x=0.5, 
-        y=0.1,
+        y=-1,
         xanchor="center",    
         font=dict(color='black')
     ),
