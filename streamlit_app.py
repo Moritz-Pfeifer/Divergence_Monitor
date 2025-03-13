@@ -884,7 +884,7 @@ fig_index.update_layout(
         bgcolor='rgba(255,255,255,0.2)',
         font=dict(color='black')  
     ),
-    title="",
+    title=dict(text=""),
     xaxis_title="",
     autosize=False,
     width=1000,
@@ -901,6 +901,7 @@ fig_index.update_layout(
         gridcolor='whitesmoke', 
         title=dict(text="Mean DTW Distance",  
                   font=dict(color="grey")
+        )
     ),
     plot_bgcolor='white',  
     paper_bgcolor='white',  
