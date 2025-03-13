@@ -374,7 +374,6 @@ fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
                                  colorbar=dict(
                                         title=dict(
                                             text="",  
-                                            side="right"
                                         ),
                                         titlefont=dict(size=14, color='grey'),  
                                         tickfont=dict(size=12, color='grey'),
@@ -575,7 +574,6 @@ fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                  colorbar=dict(
                                         title=dict(
                                             text="",  
-                                            side="right"
                                         ),
                                         titlefont=dict(size=14, color='grey'),  
                                         tickfont=dict(size=12, color='grey'),
