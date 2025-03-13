@@ -900,7 +900,7 @@ fig_index.update_layout(
         tickfont=dict(color='black'), 
         showgrid=True,
         gridcolor='whitesmoke', 
-        title=dic(text="Mean DTW Distance",  
+        title=dict(text="Mean DTW Distance",  
                   font=dict(color="grey")
     ),
     plot_bgcolor='white',  
