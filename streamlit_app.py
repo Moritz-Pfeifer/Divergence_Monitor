@@ -173,8 +173,6 @@ base_dir = os.path.dirname(__file__)
 
 # Determine the base directory of the current script
 base_dir = os.path.dirname(__file__)
-st.write("Base directory:", base_dir)
-st.write("Current working directory:", os.getcwd())
 
 # Build the path to the Excel file relative to base_dir
 excel_path = os.path.join(base_dir, 'Data_Final', 'Country_Cycle_Data', 'Cycle_Data.xlsx')
@@ -200,7 +198,11 @@ global_end_date = max(pd.to_datetime(dates.iloc[-1]) for dates in [pd.to_datetim
 global_dates_gdp = pd.date_range(global_start_date, global_end_date, freq='QS')
 
 # Load CPI data (one sheet, with each country's CPI in its own column)
-cpi_data = pd.read_excel(path + '/CPI.xlsx', index_col='Unnamed: 0')
+# Build the path to the CPI.xlsx file (adjust the folder names if necessary)
+cpi_path = os.path.join(base_dir, 'Data_Final', 'CPI.xlsx')
+
+# Load the CPI data using the relative path and set the index
+cpi_data = pd.read_excel(cpi_path, index_col='Unnamed: 0')
 cpi_data.index = pd.to_datetime(cpi_data.index)
 
 # Load GDP data for each country and compute real GDP
