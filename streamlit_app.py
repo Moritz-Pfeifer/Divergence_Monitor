@@ -407,8 +407,8 @@ fig_bus.update_layout(
             tickfont=dict(color='grey') 
         ),
         zaxis=dict(
-            title="Mean DTW Distance",  
-            titlefont=dict(color="grey"),
+            title=dic(text="Mean DTW Distance",  
+                      font=dict(color="grey"),
             showgrid=True,
             gridcolor='lightgrey',
             tickfont=dict(color='grey')  
@@ -605,8 +605,8 @@ fig_fin.update_layout(
             tickfont=dict(color='grey') 
         ),
         zaxis=dict(
-            title="Mean DTW Distance",  
-            titlefont=dict(color="grey"),
+            title=dict(text="Mean DTW Distance", 
+                       font=dict(color="grey"),
             showgrid=True,
             gridcolor='lightgrey',
             tickfont=dict(color='grey')
@@ -900,8 +900,8 @@ fig_index.update_layout(
         tickfont=dict(color='black'), 
         showgrid=True,
         gridcolor='whitesmoke', 
-        title="Mean DTW Distance",  
-        titlefont=dict(color="grey")
+        title=dic(text="Mean DTW Distance",  
+                  font=dict(color="grey")
     ),
     plot_bgcolor='white',  
     paper_bgcolor='white',  
