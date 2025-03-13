@@ -407,7 +407,7 @@ fig_bus.update_layout(
             tickfont=dict(color='grey') 
         ),
         zaxis=dict(
-            title=dic(text="Mean DTW Distance",  
+            title=dict(text="Mean DTW Distance",  
                       font=dict(color="grey"),
             showgrid=True,
             gridcolor='lightgrey',
