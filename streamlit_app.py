@@ -379,7 +379,9 @@ fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
                                         thickness=15,  
                                         len=0.4       
                                     ),
-                                 )])
+                                 )],
+                                 template=None
+                   )
 
 # Customize layout
 fig_bus.update_layout(
@@ -577,7 +579,9 @@ fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                         tickfont=dict(size=12, color='grey'),   
                                         thickness=15,  
                                         len=0.4   
-                                 )])
+                                 )],
+                                 template=None
+                   ))
 
 # Customize layout
 fig_fin.update_layout(
