@@ -384,6 +384,7 @@ fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
 
 # Customize layout
 fig_bus.update_layout(
+    template=None,
     plot_bgcolor='white',    
     paper_bgcolor='white', 
     title=dict(
@@ -584,6 +585,7 @@ fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
 
 # Customize layout
 fig_fin.update_layout(
+    template=None,
     plot_bgcolor='white',    
     paper_bgcolor='white', 
     title=dict(
