@@ -20,7 +20,7 @@ st.markdown(
     <style>
     .title {
         text-align: center; 
-        margin-bottom: 0px;
+        margin-bottom: 10px;
         font-family: 'Futura', sans-serif; 
         font-size: 2.5em;
         color: black;
