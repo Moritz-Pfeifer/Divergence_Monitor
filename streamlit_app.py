@@ -384,6 +384,10 @@ fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
                                  )],
                                  template=None
                    )
+# Remove the 'titleside' property if it exists
+cb = fig_bus.data[0].colorbar
+if "titleside" in cb:
+    del cb["titleside"]
 
 # Customize layout
 fig_bus.update_layout(
