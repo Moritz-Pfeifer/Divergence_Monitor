@@ -578,7 +578,7 @@ fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                  x=x_grid_fc, y=y_grid_fc,
                                  colorscale=darker_purples,
                                  colorbar=dict(
-                                        title="",
+                                        title=dict(text=""),
                                         titleside='right',
                                         titlefont=dict(size=14, color='grey'),  
                                         tickfont=dict(size=12, color='grey'),   
@@ -598,7 +598,7 @@ fig_fin.update_layout(
         font=dict(color='black')
     ),
     scene=dict(
-        xaxis_title="",
+        xaxis_title=dict(text=""),
         xaxis=dict(
             tickvals=xaxis_ticks_bc, 
             ticktext=xaxis_labels_bc,
