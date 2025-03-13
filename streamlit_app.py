@@ -41,6 +41,9 @@ st.markdown(
         margin-left: auto !important;
         margin-right: auto !important;
     }
+    [data-testid="column"] {
+    overflow: visible !important;
+    }
     </style>
     """,
     unsafe_allow_html=True
