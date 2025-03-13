@@ -169,14 +169,15 @@ import os
 import plotly.graph_objects as go
 import plotly.express as px
 
+base_dir = os.path.dirname(__file__)
 
-path = '/Users/moritzpfeifer/Dropbox/Divergence-Monitor/Divergence_Monitor/Data_Final'
+excel_path = os.path.join(base_dir, 'Country_Cycle_Data', 'Cycle_Data.xlsx')
+excel_data = pd.ExcelFile(excel_path)
 
-excel_data = pd.ExcelFile(path+'/Country_Cycle_Data/Cycle_Data.xlsx')
+cycle_avg_path = os.path.join(base_dir, 'Country_Cycle_Data', 'Country_Cycle_Summary.xlsx')
 
-cycle_avg = pd.read_excel(path+'/Country_Cycle_Data/Country_Cycle_Summary.xlsx', index_col='Country')
+cycle_avg = pd.read_excel(cycle_avg_path, index_col='Country')
 
-# Get the country names (sheet names)
 sheet_names = excel_data.sheet_names
 
 resampled_series_data_fc = {}
