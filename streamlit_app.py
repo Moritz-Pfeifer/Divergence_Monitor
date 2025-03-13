@@ -418,6 +418,7 @@ fig_bus.update_layout(
     #autosize=False,
     width=600,
     height=400,
+    margin=dict(l=0, r=0, t=60, b=0), 
 )
 
 bus_cycle_3d.plotly_chart(fig_bus, use_container_width=False)
@@ -617,6 +618,7 @@ fig_fin.update_layout(
     autosize=False,
     width=600,
     height=400,
+    margin=dict(l=0, r=0, t=60, b=0), 
 )
 
 # Show the plot
