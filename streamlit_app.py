@@ -20,7 +20,7 @@ st.markdown(
     <style>
     .title {
         text-align: center; 
-        margin-bottom: -20px;
+        margin-bottom: 0px;
         font-family: 'Futura', sans-serif; 
         font-size: 2.5em;
         color: black;
@@ -122,7 +122,7 @@ st.markdown(
     """
 )
 
-st.markdown("<br>", unsafe_allow_html=True)  # Insert a line break
+st.markdown("<br><br><br>", unsafe_allow_html=True)  # Insert a line break
 col1_3d, col2_3d = st.columns(2)  
 with col1_3d:
     bus_cycle_3d = st.empty()  
