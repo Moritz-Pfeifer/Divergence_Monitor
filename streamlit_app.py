@@ -385,7 +385,6 @@ fig_bus.update_layout(
     title=dict(
         text="Business Cycle Divergences",
         x=0.5, 
-        y=-1,
         xanchor="center",    
         font=dict(color='black')
     ),
@@ -414,12 +413,11 @@ fig_bus.update_layout(
             tickfont=dict(color='grey')  
         )
     ),
-    #autosize=False,
     width=600,
     height=600,
 )
 
-bus_cycle_3d.plotly_chart(fig_bus, use_container_width=False)
+bus_cycle_3d.plotly_chart(fig_bus, use_container_width=True)
 
 ### Financial Cycle 
 
