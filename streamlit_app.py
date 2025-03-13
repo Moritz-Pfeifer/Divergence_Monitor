@@ -580,7 +580,7 @@ fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                         len=0.4   
                                  )],
                                  template=None
-                   ))
+                   )
 
 # Customize layout
 fig_fin.update_layout(
