@@ -372,8 +372,10 @@ fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
                                  x=x_grid_bc, y=y_grid_bc,
                                  colorscale=darker_blues,
                                  colorbar=dict(
-                                        title=None,
-                                        titleside='right',
+                                        title=dict(
+                                            text="",  
+                                            side="right"
+                                        ),
                                         titlefont=dict(size=14, color='grey'),  
                                         tickfont=dict(size=12, color='grey'),
                                         thickness=15,  
@@ -571,8 +573,10 @@ fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                  x=x_grid_fc, y=y_grid_fc,
                                  colorscale=darker_purples,
                                  colorbar=dict(
-                                        title=dict(text=""),
-                                        titleside='right',
+                                        title=dict(
+                                            text="",  
+                                            side="right"
+                                        ),
                                         titlefont=dict(size=14, color='grey'),  
                                         tickfont=dict(size=12, color='grey'),
                                         thickness=15,  
