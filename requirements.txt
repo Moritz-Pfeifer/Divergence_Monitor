@@ -5,3 +5,4 @@ plotly
 pandas 
 numpy
 openpyxl
+pickle
