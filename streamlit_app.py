@@ -416,7 +416,7 @@ fig_bus.update_layout(
             tickfont=dict(color='grey')  
         )
     ),
-    width=500,
+    width=600,
     height=500,
 )
 
@@ -612,7 +612,7 @@ fig_fin.update_layout(
             tickfont=dict(color='grey')
         )  
     ),
-    width=500,
+    width=600,
     height=500,
 )
 
