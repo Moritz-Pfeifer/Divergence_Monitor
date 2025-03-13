@@ -1,7 +1,7 @@
 streamlit
 tslearn
 scipy
-plotly
+plotly>=5.14.0
 pandas 
 numpy
 openpyxl
