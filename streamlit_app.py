@@ -8,8 +8,6 @@ st.set_page_config(
     layout="wide",
 )
 
-st.write("Plotly version:", plotly.__version__)
-
 st.markdown(
     """
     <style>
@@ -169,6 +167,8 @@ import os
 
 import plotly.graph_objects as go
 import plotly.express as px
+st.write("Plotly version:", plotly.__version__)
+
 
 base_dir = os.path.dirname(__file__)
 
