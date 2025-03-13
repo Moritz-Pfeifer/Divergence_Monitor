@@ -416,11 +416,11 @@ fig_bus.update_layout(
             tickfont=dict(color='grey')  
         )
     ),
-    width=600,
-    height=500,
+    width=1000,
+    height=700,
 )
 
-bus_cycle_3d.plotly_chart(fig_bus, use_container_width=True)
+bus_cycle_3d.plotly_chart(fig_bus, use_container_width=False)
 
 ### Financial Cycle 
 
@@ -612,12 +612,12 @@ fig_fin.update_layout(
             tickfont=dict(color='grey')
         )  
     ),
-    width=600,
-    height=500,
+    width=1000,
+    height=700,
 )
 
 # Show the plot
-fin_cycle_3d.plotly_chart(fig_fin, use_container_width=True)  
+fin_cycle_3d.plotly_chart(fig_fin, use_container_width=False)  
 
 # Compute the symmetry indices by averaging
 index_bc   = np.nanmean(asymmetry_matrix_bc, axis=0)
