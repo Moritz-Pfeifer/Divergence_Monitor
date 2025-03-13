@@ -388,6 +388,7 @@ fig_bus.update_layout(
     title=dict(
         text="Business Cycle Divergences",
         x=0.5, 
+        y=0.1,
         xanchor="center",    
         font=dict(color='black')
     ),
@@ -416,8 +417,8 @@ fig_bus.update_layout(
             tickfont=dict(color='grey')  
         )
     ),
-    width=600,
-    height=600,
+    #width=400,
+    #height=400,
 )
 
 bus_cycle_3d.plotly_chart(fig_bus, use_container_width=True)
@@ -613,9 +614,8 @@ fig_fin.update_layout(
             tickfont=dict(color='grey')
         )  
     ),
-    autosize=False,
-    width=600,
-    height=600,
+    #width=400,
+    #height=400,
 )
 
 # Show the plot
