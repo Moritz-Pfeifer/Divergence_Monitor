@@ -1,5 +1,13 @@
 import streamlit as st
+import os
+import pandas as pd
+import numpy as np
+from scipy.ndimage import gaussian_filter
 from tslearn.metrics import dtw
+
+import plotly.graph_objects as go
+import plotly.express as px
+st.write("Plotly version:", plotly.__version__)
 
 #################################### CODE WEB #################################################
 
@@ -159,17 +167,6 @@ st.markdown(
 
 
 #################################### CODE PLOTS #################################################
-
-import pandas as pd
-import numpy as np
-from scipy.ndimage import gaussian_filter
-import os
-
-import plotly.graph_objects as go
-import plotly.express as px
-st.write("Plotly version:", plotly.__version__)
-
-
 base_dir = os.path.dirname(__file__)
 
 # Determine the base directory of the current script
