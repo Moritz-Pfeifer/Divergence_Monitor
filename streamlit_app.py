@@ -7,8 +7,10 @@ from tslearn.metrics import dtw
 
 import plotly.graph_objects as go
 import plotly.express as px
-import plotly.io as pio
-pio.templates.default = None
+from plotly.validators.surface import colorbar as cb_colorbar
+# Remove 'titleside' from the TitleValidator if it exists
+if 'titleside' in cb_colorbar.TitleValidator.VALID_PROPERTIES:
+    cb_colorbar.TitleValidator.VALID_PROPERTIES.remove('titleside')
 
 #################################### CODE WEB #################################################
 
