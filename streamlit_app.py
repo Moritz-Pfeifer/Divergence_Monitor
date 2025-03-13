@@ -869,13 +869,13 @@ fig_index.update_layout(
         overlaying='x',        
         side='top',           
         range=[0,1]           
-    ),
+    )),
     yaxis2=dict(
         visible=False,
         overlaying='y',
         side='right',
         range=[0,1]
-    ),
+    )),
     legend=dict(
         x=0.5,
         y=-0.2,
