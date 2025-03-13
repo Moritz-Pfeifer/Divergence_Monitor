@@ -81,7 +81,7 @@ st.markdown(
     indicators using a non-parametric method that preserves turning points without imposing fixed cycle durations. The business and financial 
     cycle models are based on four fundamental variables each: real quarterly growth rates of GDP, private consumption, gross fixed capital 
     formation, and unemployment for the business cycle and real quarterly growth rates of outstanding credit, house prices, stock prices and 
-    bond prices for the financial cyc For more details, see our paper <a href="#ref-bugdalle-pfeifer-2025">Bugdalle &amp; Pfeifer (2025)</a>. 
+    bond prices for the financial cycle. For more details, see our paper <a href="#ref-bugdalle-pfeifer-2025">Bugdalle &amp; Pfeifer (2025)</a>. 
     """,
     unsafe_allow_html=True, 
 )
