@@ -122,7 +122,10 @@ st.markdown(
     """
 )
 
-st.markdown("<br><br><br>", unsafe_allow_html=True)  # Insert a line break
+st.write("")
+st.write("")
+st.write("")
+st.write("")
 col1_3d, col2_3d = st.columns(2)  
 with col1_3d:
     bus_cycle_3d = st.empty()  
@@ -418,7 +421,6 @@ fig_bus.update_layout(
     #autosize=False,
     width=600,
     height=600,
-    margin=dict(l=0, r=0, t=100, b=0), 
 )
 
 bus_cycle_3d.plotly_chart(fig_bus, use_container_width=False)
@@ -618,7 +620,6 @@ fig_fin.update_layout(
     autosize=False,
     width=600,
     height=600,
-    margin=dict(l=0, r=0, t=100, b=0), 
 )
 
 # Show the plot
