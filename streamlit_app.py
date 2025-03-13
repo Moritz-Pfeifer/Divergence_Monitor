@@ -784,7 +784,8 @@ ump_trace = go.Scatter(
 fig_index.add_trace(esm_trace)
 fig_index.add_trace(ump_trace)
 
-df_recession = pd.read_excel(path + "/Recession_OCED.xlsx")
+df_recession_path = os.path.join(base_dir, 'Data_Final', 'Recession_OCED.xlsx')
+df_recession = pd.read_excel(df_recession_path)
 df_recession.columns = df_recession.columns.str.strip().str.replace(" ", "")
 df_recession["observation_date"] = pd.to_datetime(df_recession["observation_date"])
 
