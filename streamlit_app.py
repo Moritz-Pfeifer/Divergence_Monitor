@@ -373,7 +373,8 @@ darker_blues = [
 fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
                                  x=x_grid_bc, y=y_grid_bc,
                                  colorscale=darker_blues,
-                                 showscale=False 
+                                 showscale=False,
+                                 _skip_invalid=True
                                  )])
 
 # Customize layout
@@ -566,7 +567,8 @@ darker_purples = [
 fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                  x=x_grid_fc, y=y_grid_fc,
                                  colorscale=darker_purples,
-                                 showscale=False 
+                                 showscale=False,
+                                 _skip_invalid=True
                                  )])
 
 # Customize layout
