@@ -8,6 +8,8 @@ st.set_page_config(
     layout="wide",
 )
 
+st.write("Plotly version:", plotly.__version__)
+
 st.markdown(
     """
     <style>
@@ -63,8 +65,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-st.write("Plotly version:", plotly.__version__)
 
 st.markdown('<div class="sub-title">Methodology</div>', unsafe_allow_html=True)
 st.markdown(
