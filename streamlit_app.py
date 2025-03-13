@@ -764,7 +764,6 @@ for row in ump_df.itertuples():
     hovertext_ump += ["", long_label, None]
     marker_sizes_ump += [0, 0, 0]
 
-
 ump_trace = go.Scatter(
     x=x_ump,
     y=y_ump,
@@ -870,12 +869,12 @@ fig_index.update_layout(
         side='top',           
         range=[0,1]           
     )),
-    yaxis2=dict(
-        visible=False,
-        overlaying='y',
-        side='right',
-        range=[0,1]
-    )),
+        yaxis2=dict(
+            visible=False,
+            overlaying='y',
+            side='right',
+            range=[0,1]
+        )),
     legend=dict(
         x=0.5,
         y=-0.2,
