@@ -1,7 +1,5 @@
 import streamlit as st
 from tslearn.metrics import dtw
-st.write("Plotly version:", plotly.__version__)
-
 
 #################################### CODE WEB #################################################
 
@@ -66,6 +64,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.write("Plotly version:", plotly.__version__)
 
 st.markdown('<div class="sub-title">Methodology</div>', unsafe_allow_html=True)
 st.markdown(
