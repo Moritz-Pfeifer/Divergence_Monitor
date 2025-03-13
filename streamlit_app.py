@@ -578,7 +578,7 @@ fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                         tickfont=dict(size=12, color='grey'),   
                                         thickness=15,  
                                         len=0.4   
-                                 )],
+                                 ))],
                                  template=None
                    )
 
