@@ -7,7 +7,6 @@ from tslearn.metrics import dtw
 
 import plotly.graph_objects as go
 import plotly.express as px
-st.write("Plotly version:", plotly.__version__)
 
 #################################### CODE WEB #################################################
 
@@ -169,9 +168,6 @@ st.markdown(
 #################################### CODE PLOTS #################################################
 base_dir = os.path.dirname(__file__)
 
-# Determine the base directory of the current script
-base_dir = os.path.dirname(__file__)
-
 # Build the path to the Excel file relative to base_dir
 excel_path = os.path.join(base_dir, 'Data_Final', 'Country_Cycle_Data', 'Cycle_Data.xlsx')
 
@@ -196,7 +192,6 @@ global_end_date = max(pd.to_datetime(dates.iloc[-1]) for dates in [pd.to_datetim
 global_dates_gdp = pd.date_range(global_start_date, global_end_date, freq='QS')
 
 # Load CPI data (one sheet, with each country's CPI in its own column)
-# Build the path to the CPI.xlsx file (adjust the folder names if necessary)
 cpi_path = os.path.join(base_dir, 'Data_Final', 'CPI.xlsx')
 gdp_path = os.path.join(base_dir, 'Data_Final', 'business_cycle_data_final_ERMcut.xlsx')
 
@@ -377,7 +372,7 @@ fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
                                  x=x_grid_bc, y=y_grid_bc,
                                  colorscale=darker_blues,
                                  colorbar=dict(
-                                        title=dict(text=""),
+                                        title=None,
                                         titleside='right',
                                         titlefont=dict(size=14, color='grey'),  
                                         tickfont=dict(size=12, color='grey'),
@@ -397,7 +392,7 @@ fig_bus.update_layout(
         font=dict(color='black')
     ),
     scene=dict(
-        xaxis_title=dict(text=""),
+        xaxis_title=None,
         xaxis=dict(
             tickvals=xaxis_ticks_bc, 
             ticktext=xaxis_labels_bc,
