@@ -177,7 +177,7 @@ st.write("Base directory:", base_dir)
 st.write("Current working directory:", os.getcwd())
 
 # Build the path to the Excel file relative to base_dir
-excel_path = os.path.join(base_dir, 'Country_Cycle_Data', 'Cycle_Data.xlsx')
+excel_path = os.path.join(base_dir, 'Data_Final', 'Country_Cycle_Data', 'Cycle_Data.xlsx')
 st.write("Excel file path:", excel_path)
 
 # Check if the file exists at the computed path
