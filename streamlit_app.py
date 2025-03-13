@@ -122,14 +122,10 @@ st.markdown(
     """
 )
 
-st.write("")
-st.write("")
-st.write("")
-st.write("")
+
 col1_3d, col2_3d = st.columns(2)  
 with col1_3d:
     bus_cycle_3d = st.empty()  
-
 with col2_3d:
     fin_cycle_3d = st.empty()  
 
@@ -591,7 +587,6 @@ fig_fin.update_layout(
         xanchor="center",    
         font=dict(color='black')
     ),
-    margin=dict(t=0),
     scene=dict(
         xaxis_title=dict(text=""),
         xaxis=dict(
@@ -623,7 +618,7 @@ fig_fin.update_layout(
 )
 
 # Show the plot
-fin_cycle_3d.plotly_chart(fig_fin, use_container_width=False)  
+fin_cycle_3d.plotly_chart(fig_fin, use_container_width=True)  
 
 # Compute the symmetry indices by averaging
 index_bc   = np.nanmean(asymmetry_matrix_bc, axis=0)
