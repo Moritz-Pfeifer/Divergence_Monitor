@@ -7,7 +7,6 @@ from tslearn.metrics import dtw
 
 import plotly.graph_objects as go
 import plotly.express as px
-import plotly.io as pio
 pio.templates.default = None
 
 #################################### CODE WEB #################################################
@@ -373,15 +372,6 @@ darker_blues = [
 fig_bus = go.Figure(data=[go.Surface(z=smoothed_matrix_bc,
                                  x=x_grid_bc, y=y_grid_bc,
                                  colorscale=darker_blues,
-                                 colorbar=dict(
-                                        title=dict(
-                                            text="",  
-                                        ),
-                                        titlefont=dict(size=14, color='grey'),  
-                                        tickfont=dict(size=12, color='grey'),
-                                        thickness=15,  
-                                        len=0.4  
-                                    ),
                                  )])
 
 # Customize layout
@@ -574,15 +564,6 @@ darker_purples = [
 fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                  x=x_grid_fc, y=y_grid_fc,
                                  colorscale=darker_purples,
-                                 colorbar=dict(
-                                        title=dict(
-                                            text="",  
-                                        ),
-                                        titlefont=dict(size=14, color='grey'),  
-                                        tickfont=dict(size=12, color='grey'),
-                                        thickness=15,  
-                                        len=0.4  
-                                    ),
                                  )])
 
 # Customize layout
