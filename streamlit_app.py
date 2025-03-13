@@ -394,7 +394,7 @@ fig_bus.update_layout(
         font=dict(color='black')
     ),
     scene=dict(
-        xaxis_title=None,
+        xaxis_title=dict(text=""),
         xaxis=dict(
             tickvals=xaxis_ticks_bc, 
             ticktext=xaxis_labels_bc,
@@ -402,7 +402,7 @@ fig_bus.update_layout(
             gridcolor='lightgrey',
             tickfont=dict(color='grey') 
         ),
-        yaxis_title="",
+        yaxis_title=dict(text=""),
         yaxis=dict(
             tickvals=np.arange(num_countries_bc), 
             ticktext=y_axis_bc,
@@ -603,7 +603,7 @@ fig_fin.update_layout(
             gridcolor='lightgrey',
             tickfont=dict(color='grey') 
         ),
-        yaxis_title="",
+        yaxis_title=dict(text=""),
         yaxis=dict(
             tickvals=np.arange(num_countries_bc), 
             ticktext=y_axis_bc,
