@@ -119,7 +119,7 @@ st.latex(r'''
 st.markdown(
     r"""
     where, $\mathbf{x}_{t}$ and $\mathbf{y}_{s}$ are the smoothed cycle values at time $t$ and time $s$ for countries $i$ and $j$, respectively.
-    The resulting distance $D(mathbf{y}_{s})$ captures the degree of similarity, with smaller values indicating greater similarity between the cycles. 
+    The resulting distance $D(\mathbf{y}_{s})$ captures the degree of similarity, with smaller values indicating greater similarity between the cycles. 
     To ensure that the DTW comparison reflects the timing of cyclical movements, the alignment is performed over a local window defined by the average cycle duration.
     To aggregate the pairwise DTW distances into a single indicator, we compute a gdp-weighted mean DTW distance. The result is the above indicator.
     """
