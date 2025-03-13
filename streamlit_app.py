@@ -1,5 +1,7 @@
 import streamlit as st
 from tslearn.metrics import dtw
+st.write("Plotly version:", plotly.__version__)
+
 
 #################################### CODE WEB #################################################
 
