@@ -668,7 +668,8 @@ fig_index.add_trace(go.Scatter(
     name='Divergence Index',
 ))
 
-df_events = pd.read_excel(path+"/Events.xlsx")
+df_events_path = os.path.join(base_dir, 'Data_Final', 'Events.xlsx')
+df_events = pd.read_excel(df_events_path)
 df_events.columns = df_events.columns.str.strip().str.replace(" ", "")
 
 
