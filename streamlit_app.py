@@ -415,7 +415,6 @@ fig_bus.update_layout(
         )
     ),
     autosize=False,
-    margin=dict(l=0, r=0, t=0, b=0),
     width=600,
     height=400,
 )
