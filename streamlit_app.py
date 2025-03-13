@@ -189,7 +189,7 @@ if not os.path.exists(excel_path):
 excel_data = pd.ExcelFile(excel_path)
 
 # Build the path to "Country_Cycle_Summary.xlsx"
-cycle_avg_path = os.path.join(base_dir, 'Country_Cycle_Data', 'Country_Cycle_Summary.xlsx')
+cycle_avg_path = os.path.join(base_dir, 'Data_Final', 'Country_Cycle_Data', 'Country_Cycle_Summary.xlsx')
 st.write("Cycle summary file path:", cycle_avg_path)
 
 # Check if the summary file exists
