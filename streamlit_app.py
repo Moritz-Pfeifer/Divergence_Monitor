@@ -7,9 +7,6 @@ from tslearn.metrics import dtw
 
 import plotly.graph_objects as go
 import plotly.express as px
-import plotly.io as pio
-pio.templates["empty"] = {}
-pio.templates.default = "empty"
 
 #################################### CODE WEB #################################################
 
@@ -358,7 +355,6 @@ xaxis_labels_bc = [year_labels_bc[i] for i in xaxis_ticks_bc]
 x_axis_bc = np.arange(num_quarters_bc)  # Time on the x-axis
 y_axis_bc = sorted_sheet_names_bc  # Use sorted country names on the y-axis
 
-"""
 # Create the meshgrid for the 3D surface plot
 x_grid_bc, y_grid_bc = np.meshgrid(np.arange(num_quarters_bc), np.arange(num_countries_bc))
 
@@ -428,7 +424,7 @@ fig_bus.update_layout(
 )
 
 bus_cycle_3d.plotly_chart(fig_bus, use_container_width=False)
-"""
+
 ### Financial Cycle 
 
 # Define the global quarterly dates based on the common time range
@@ -558,7 +554,7 @@ xaxis_labels_fc = [year_labels_fc[i] for i in xaxis_ticks_fc]
 # Set up for 3D surface plot with sorted data
 x_axis_fc = np.arange(num_quarters_fc)  # Time on the x-axis
 y_axis_fc = sorted_sheet_names_fc  # Use sorted country names on the y-axis
-"""
+
 # Create the meshgrid for the 3D surface plot
 x_grid_fc, y_grid_fc = np.meshgrid(np.arange(num_quarters_fc), np.arange(num_countries_fc))
 
@@ -629,7 +625,7 @@ fig_fin.update_layout(
 
 # Show the plot
 fin_cycle_3d.plotly_chart(fig_fin, use_container_width=False)  
-"""
+
 # Compute the symmetry indices by averaging
 index_bc   = np.nanmean(asymmetry_matrix_bc, axis=0)
 index_fc   = np.nanmean(asymmetry_matrix_fc, axis=0)
