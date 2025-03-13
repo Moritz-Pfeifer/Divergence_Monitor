@@ -3,5 +3,5 @@ tslearn
 scipy
 plotly==5.9.0
 pandas 
-numpy
+numpy==1.23.5
 openpyxl
