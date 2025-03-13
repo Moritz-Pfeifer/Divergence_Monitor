@@ -200,6 +200,7 @@ global_dates_gdp = pd.date_range(global_start_date, global_end_date, freq='QS')
 # Load CPI data (one sheet, with each country's CPI in its own column)
 # Build the path to the CPI.xlsx file (adjust the folder names if necessary)
 cpi_path = os.path.join(base_dir, 'Data_Final', 'CPI.xlsx')
+gdp_path = os.path.join(base_dir, 'Data_Final', 'business_cycle_data_final_ERMcut.xlsx')
 
 # Load the CPI data using the relative path and set the index
 cpi_data = pd.read_excel(cpi_path, index_col='Unnamed: 0')
@@ -210,7 +211,7 @@ gdp_data = {}
 
 for sheet in sheet_names:
     # Load nominal GDP data for the country
-    data_gdp = pd.read_excel(path + '/business_cycle_data_final_ERMcut.xlsx', sheet_name=sheet)
+    data_gdp = pd.read_excel(gdp_path, sheet_name=sheet)
     country_dates_gdp = pd.to_datetime(data_gdp.iloc[:, 0])
     gdp_values = data_gdp['GDP'].values
 
