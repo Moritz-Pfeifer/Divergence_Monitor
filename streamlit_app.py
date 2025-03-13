@@ -8,7 +8,8 @@ from tslearn.metrics import dtw
 import plotly.graph_objects as go
 import plotly.express as px
 import plotly.io as pio
-pio.templates.default = None
+pio.templates["empty"] = {}
+pio.templates.default = "empty"
 
 #################################### CODE WEB #################################################
 
