@@ -171,14 +171,34 @@ import plotly.express as px
 
 base_dir = os.path.dirname(__file__)
 
+# Determine the base directory of the current script
+base_dir = os.path.dirname(__file__)
+st.write("Base directory:", base_dir)
+st.write("Current working directory:", os.getcwd())
+
+# Build the path to the Excel file relative to base_dir
 excel_path = os.path.join(base_dir, 'Country_Cycle_Data', 'Cycle_Data.xlsx')
+st.write("Excel file path:", excel_path)
+
+# Check if the file exists at the computed path
+if not os.path.exists(excel_path):
+    st.error(f"Excel file not found at: {excel_path}")
+    st.stop()
+
+# Load the Excel file
 excel_data = pd.ExcelFile(excel_path)
 
+# Build the path to "Country_Cycle_Summary.xlsx"
 cycle_avg_path = os.path.join(base_dir, 'Country_Cycle_Data', 'Country_Cycle_Summary.xlsx')
+st.write("Cycle summary file path:", cycle_avg_path)
 
+# Check if the summary file exists
+if not os.path.exists(cycle_avg_path):
+    st.error(f"Cycle summary file not found at: {cycle_avg_path}")
+    st.stop()
+
+# Load the summary data
 cycle_avg = pd.read_excel(cycle_avg_path, index_col='Country')
-
-sheet_names = excel_data.sheet_names
 
 resampled_series_data_fc = {}
 resampled_series_data_bc = {}
