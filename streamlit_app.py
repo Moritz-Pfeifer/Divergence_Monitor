@@ -572,7 +572,7 @@ fig_fin = go.Figure(data=[go.Surface(z=smoothed_matrix_fc,
                                  colorscale=darker_purples,
                                  colorbar=dict(
                                         title=dict(text="",
-                                                   titlefont=dict(size=14, color='grey'), 
+                                                   font=dict(size=14, color='grey'), 
                                         ),
                                         tickfont=dict(size=12, color='grey'),   
                                         thickness=15,  
