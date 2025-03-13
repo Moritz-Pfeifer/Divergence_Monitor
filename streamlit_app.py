@@ -122,7 +122,7 @@ st.markdown(
     """
 )
 
-<p></p>
+st.markdown("<br>", unsafe_allow_html=True)  # Insert a line break
 col1_3d, col2_3d = st.columns(2)  
 with col1_3d:
     bus_cycle_3d = st.empty()  
