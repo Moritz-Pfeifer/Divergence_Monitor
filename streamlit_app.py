@@ -170,7 +170,7 @@ st.markdown(
 # Load files
 base_dir = os.path.dirname(__file__)
 
-precomputed_path = os.path.join(base_dir, 'Data_web', 'precomputed_data.pkl')
+precomputed_path = os.path.join(base_dir, 'Data_Final', 'Data_web', 'precomputed_data.pkl')
 
 if os.path.exists(precomputed_path):
     with open(precomputed_path, 'rb') as f:
