@@ -715,7 +715,7 @@ with col1_2d:
         ),
         annotations=[
         dict(
-            x=1,
+            x=1.25,
             y=1.05,
             xref="paper",
             yref="paper",
@@ -768,8 +768,8 @@ with col2_2d:
         ),
         annotations=[
         dict(
-            x=1,
-            y=1.25,
+            x=1.5,
+            y=1,
             xref="paper",
             yref="paper",
             text="Click on the legend to select/deselect countries",
