@@ -660,6 +660,8 @@ with button_index.container():
 excel_path = os.path.join(base_dir, 'Data_Final', 'Country_Cycle_Data', 'Cycle_Data.xlsx')
 # Load the Excel file
 excel_data = pd.ExcelFile(excel_path, engine='openpyxl')
+sheet_names = excel_data.sheet_names
+
 
 cycle_data = {}
 for country in sheet_names:
