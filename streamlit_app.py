@@ -188,6 +188,14 @@ if os.path.exists(precomputed_path):
     x_grid_bc = precomputed["x_grid_bc"] 
     y_grid_fc = precomputed["y_grid_fc"] 
     y_grid_bc = precomputed["y_grid_bc"] 
+    xaxis_ticks_bc = precomputed["xaxis_ticks_bc"]
+    xaxis_ticks_fc = precomputed["xaxis_ticks_fc"]
+    xaxis_labels_bc = precomputed["xaxis_labels_bc"]
+    xaxis_labels_fc = precomputed["xaxis_labels_fc"]
+    num_countries_bc = precomputed["num_countries_bc"]
+    num_countries_fc = precomputed["num_countries_fc"]
+    num_quarters_bc = precomputed["num_quarters_bc"]
+    num_quarters_fc = precomputed["num_quarters_fc"]
 
 # Business cycle 
 darker_blues = [
