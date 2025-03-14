@@ -196,6 +196,9 @@ if os.path.exists(precomputed_path):
     num_countries_fc = precomputed["num_countries_fc"]
     num_quarters_bc = precomputed["num_quarters_bc"]
     num_quarters_fc = precomputed["num_quarters_fc"]
+    y_axis_bc = precomputed["y_axis_bc"]
+    y_axis_fc = precomputed["y_axis_fc"]
+
 
 # Business cycle 
 darker_blues = [
