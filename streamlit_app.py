@@ -105,9 +105,8 @@ math_container = st.container()
 with math_container:
     st.markdown(
         r"""
-        In our case, DTW is applied to each type of the smoothed cycle indices, meaning one measure of similarity is estimated for each type of cycle.  
-        Within each cycle category, DTW computes the alignment path $\mathbf{\pi}_{ij}$ for each pair of countries $i$ and $j$, that minimizes the 
-        cumulative distance between two cycles:
+        In our case, DTW is applied to each type of the smoothed cycle indices, meaning one measure of similarity is estimated for each type of cycle. Within each cycle category, 
+        DTW computes the alignment path $\mathbf{\pi}_{ij}$ for each pair of countries $i$ and $j$, that minimizes the cumulative distance between two cycles:
         """
     )
 
@@ -714,6 +713,17 @@ with col1_2d:
             gridwidth=1,
             zeroline=False
         ),
+        annotations=[
+        dict(
+            x=1,
+            y=1.05,
+            xref="paper",
+            yref="paper",
+            text="Click on the legend to select/deselect countries",
+            showarrow=False,
+            font=dict(size=12, color="black")
+        )
+    ]
         #template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
@@ -756,6 +766,17 @@ with col2_2d:
             gridwidth=1,
             zeroline=False
         ),
+        annotations=[
+        dict(
+            x=1,
+            y=1.05,
+            xref="paper",
+            yref="paper",
+            text="Click on the legend to select/deselect countries",
+            showarrow=False,
+            font=dict(size=12, color="black")
+        )
+    ]
         #template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
