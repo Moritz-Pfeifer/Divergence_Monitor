@@ -657,6 +657,10 @@ with button_index.container():
 
 
 # Load the cycle data for all countries (from all sheets in the Excel file)
+excel_path = os.path.join(base_dir, 'Data_Final', 'Country_Cycle_Data', 'Cycle_Data.xlsx')
+# Load the Excel file
+excel_data = pd.ExcelFile(excel_path, engine='openpyxl')
+
 cycle_data = {}
 for country in sheet_names:
     df_cycle = pd.read_excel(excel_data, sheet_name=country)
@@ -760,18 +764,3 @@ with col2_2d:
     st.plotly_chart(fig_fc, use_container_width=False)
 
 
-# Save the computed matrices, indices, and any other data you need for display.
-precomputed = {
-    "asymmetry_matrix_bc": asymmetry_matrix_bc,
-    "asymmetry_matrix_fc": asymmetry_matrix_fc,
-    "index_bc": index_bc,
-    "index_fc": index_fc,
-    "composite_divergence_series_mean": composite_divergence_series_mean,
-    "global_dates_bc": global_dates_bc,
-    "sorted_sheet_names_bc": sorted_sheet_names_bc,
-    # … include any other intermediate arrays needed for plotting (e.g., smoothed_matrix_bc, smoothed_matrix_fc)
-}
-
-output_path = os.path.join(os.path.dirname(__file__), 'Data_Final', 'precomputed_data.pkl')
-with open(output_path, 'wb') as f:
-    pickle.dump(precomputed, f)
