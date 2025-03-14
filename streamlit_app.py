@@ -715,7 +715,7 @@ with col1_2d:
         ),
         annotations=[
         dict(
-            x=1.1,
+            x=1.15,
             y=1.05,
             xref="paper",
             yref="paper",
@@ -768,7 +768,7 @@ with col2_2d:
         ),
         annotations=[
         dict(
-            x=1.1,
+            x=1.15,
             y=1.05,
             xref="paper",
             yref="paper",
