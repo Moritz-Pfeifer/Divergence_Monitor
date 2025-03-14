@@ -769,7 +769,7 @@ with col2_2d:
         annotations=[
         dict(
             x=1,
-            y=1.05,
+            y=1.25,
             xref="paper",
             yref="paper",
             text="Click on the legend to select/deselect countries",
