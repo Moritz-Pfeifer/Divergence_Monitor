@@ -723,7 +723,7 @@ with col1_2d:
             showarrow=False,
             font=dict(size=12, color="black")
         )
-    ]
+        ],
         #template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
@@ -776,7 +776,7 @@ with col2_2d:
             showarrow=False,
             font=dict(size=12, color="black")
         )
-    ]
+    ];
         #template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
