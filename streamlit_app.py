@@ -170,6 +170,8 @@ st.markdown(
 # Load files
 base_dir = os.path.dirname(__file__)
 
+precomputed_path = os.path.join(base_dir, 'Data_web', 'precomputed_data.pkl')
+
 if os.path.exists(precomputed_path):
     with open(precomputed_path, 'rb') as f:
         precomputed = pickle.load(f)
@@ -186,10 +188,6 @@ if os.path.exists(precomputed_path):
     x_grid_bc = precomputed["x_grid_bc"] 
     y_grid_fc = precomputed["y_grid_fc"] 
     y_grid_bc = precomputed["y_grid_bc"] 
-else:
-    st.error("Precomputed data not found. Please run the precomputation script first.")
-
-
 
 # Business cycle 
 darker_blues = [
