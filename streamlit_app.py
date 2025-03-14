@@ -719,7 +719,7 @@ with col1_2d:
             y=1.05,
             xref="paper",
             yref="paper",
-            text="Click on the legend to select/deselect countries",
+            text="Click to select/deselect countries",
             showarrow=False,
             font=dict(size=12, color="black")
         )
@@ -768,11 +768,11 @@ with col2_2d:
         ),
         annotations=[
         dict(
-            x=1.5,
+            x=1.25,
             y=1,
             xref="paper",
             yref="paper",
-            text="Click on the legend to select/deselect countries",
+            text="Click to select/deselect countries",
             showarrow=False,
             font=dict(size=12, color="black")
         )
