@@ -40,6 +40,11 @@ st.markdown(
         margin-left: auto !important;
         margin-right: auto !important;
     }
+    @media (max-width: 600px) {
+        [data-testid="stMarkdown"] {
+            max-width: 85vw !important;
+        }
+    }
     [data-testid="column"] {
     overflow: visible !important;
     }
