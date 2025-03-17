@@ -64,10 +64,11 @@ st.markdown(
     cannot function effeciently in a currency union when cycles are asymmetric. If, for example, Germany is in crisis and Spain is booming, 
     as was the case after the turn of the millennium, the European Central Bank (ECB) cannot set the right interest rate for both countries. 
     A lower interest rate would lead to overheating the economy in Spain, and a higher interest rate would exacerbate the crisis in Germany. 
-    Since Mario Draghi's <a href="https://www.ecb.europa.eu/press/key/date/2012/html/sp120726.en.html">"Whatever it takes"</a> speech, 
-    monetary policy in the Eurozone is driven by measures seeking to hold the eurozone together. Among other things, we hope that our 
-    monitor can help economists and policymakers in the assessment of such measures. The indicator is measured on a quarterly basis and 
-    will be updated regularly. The <b>next update</b> is scheduled for <b>August, 2025</b>.
+    
+    Since Mario Draghi's <a href="https://www.ecb.europa.eu/press/key/date/2012/html/sp120726.en.html">"Whatever it takes"</a> speech—when divergence 
+    was at ap eak in mid-2012 (see OMT marker above)–monetary policy in the Eurozone is driven by measures seeking to hold the eurozone together. 
+    Among other things, we hope that our monitor can help economists and policymakers in the assessment of such measures. The indicator is measured on a 
+    quarterly basis and will be updated regularly. The <b>next update</b> is scheduled for <b>August, 2025</b>.
     </div>
     """,
     unsafe_allow_html=True
