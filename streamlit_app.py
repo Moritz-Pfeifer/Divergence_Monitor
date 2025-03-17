@@ -36,7 +36,7 @@ st.markdown(
         color: black !important;
     }
     [data-testid="stMarkdown"] {
-        max-width: 75vw !important;
+        max-width: 65vw !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
