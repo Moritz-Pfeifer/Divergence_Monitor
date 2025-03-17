@@ -41,7 +41,7 @@ st.markdown(
         margin-left: auto !important;
         margin-right: auto !important;
     }
-    @media (max-width: 390px) {
+    @media (max-width: 400px) {
         [data-testid="stMarkdown"] {
             max-width: 85vw !important;
         }
