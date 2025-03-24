@@ -1,0 +1,23 @@
+name: Scheduled Empty Commit
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  empty_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Create an empty commit and push
+        run: |
+          git commit --allow-empty -m "Scheduled empty commit $(date)"
+          git push
+
