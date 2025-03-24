@@ -360,7 +360,7 @@ fig_index.add_trace(go.Scatter(
     y=index_fc_subset,
     mode='lines',
     line=dict(color='rgb(106, 81, 163)', dash='dot'),
-    opacity=0.4,
+    opacity=0.5,
     name='Financial Divergence',
 ))
 
@@ -369,7 +369,7 @@ fig_index.add_trace(go.Scatter(
     y=index_bc_subset,
     mode='lines',
     line=dict(color='rgb(33, 113, 181)', dash='dot'),
-    opacity=0.4,
+    opacity=0.5,
     name='Business Divergence'
 ))
 
