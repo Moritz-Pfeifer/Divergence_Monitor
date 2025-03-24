@@ -16,6 +16,7 @@ st.set_page_config(
 
 st.markdown(
     """
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     .title {
         text-align: center; 
@@ -36,9 +37,14 @@ st.markdown(
         color: black !important;
     }
     [data-testid="stMarkdown"] {
-        max-width: 75vw !important;
+        max-width: 65vw !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+    @media (max-width: 400px) {
+        [data-testid="stMarkdown"] {
+            max-width: 85vw !important;
+        }
     }
     [data-testid="column"] {
     overflow: visible !important;
@@ -64,10 +70,11 @@ st.markdown(
     cannot function effeciently in a currency union when cycles are asymmetric. If, for example, Germany is in crisis and Spain is booming, 
     as was the case after the turn of the millennium, the European Central Bank (ECB) cannot set the right interest rate for both countries. 
     A lower interest rate would lead to overheating the economy in Spain, and a higher interest rate would exacerbate the crisis in Germany. 
-    Since Mario Draghi's <a href="https://www.ecb.europa.eu/press/key/date/2012/html/sp120726.en.html">"Whatever it takes"</a> speech, 
-    monetary policy in the Eurozone is driven by measures seeking to hold the eurozone together. Among other things, we hope that our 
-    monitor can help economists and policymakers in the assessment of such measures. The indicator is measured on a quarterly basis and 
-    will be updated regularly. The <b>next update</b> is scheduled for <b>August, 2025</b>.
+    
+    Since Mario Draghi's <a href="https://www.ecb.europa.eu/press/key/date/2012/html/sp120726.en.html">"Whatever it takes"</a> speech—when divergence 
+    was at a peak in mid-2012 (see OMT marker above)—monetary policy in the Eurozone is driven by measures seeking to hold the eurozone together. 
+    Among other things, we hope that our monitor can help economists and policymakers in the assessment of such measures. The indicator is measured on a 
+    quarterly basis and will be updated regularly. The <b>next update</b> is scheduled for <b>August, 2025</b>.
     </div>
     """,
     unsafe_allow_html=True
@@ -105,9 +112,8 @@ math_container = st.container()
 with math_container:
     st.markdown(
         r"""
-        In our case, DTW is applied to each type of the smoothed cycle indices, meaning one measure of similarity is estimated for each type of cycle.  
-        Within each cycle category, DTW computes the alignment path $\mathbf{\pi}_{ij}$ for each pair of countries $i$ and $j$, that minimizes the 
-        cumulative distance between two cycles:
+        In our case, DTW is applied to each type of the smoothed cycle indices, meaning one measure of similarity is estimated for each type of cycle. Within each cycle category, 
+        DTW computes the alignment path $\mathbf{\pi}_{ij}$ for each pair of countries $i$ and $j$, that minimizes the cumulative distance between two cycles:
         """
     )
 
@@ -264,138 +270,6 @@ fig_bus.update_layout(
 bus_cycle_3d.plotly_chart(fig_bus, use_container_width=False)
 
 ### Financial Cycle 
-
-# Define the global quarterly dates based on the common time range
-global_dates_fc = pd.date_range(global_start_date, global_end_date, freq='QS')
-
-# Resample each country's data to align with global quarterly dates
-for sheet in sheet_names:
-    # Load the data for the current sheet (country)
-    data_fc = pd.read_excel(excel_data, sheet_name=sheet)
-
-    # Extract the dates and FCycle columns
-    country_dates_fc = pd.to_datetime(data_fc.iloc[:, 0])  # Date column
-    fcycle_values = data_fc['FCycle'].values  # FCycle column
-
-    # Convert FCycle values to a pandas Series indexed by country-specific dates
-    country_series_fc = pd.Series(data=fcycle_values, index=country_dates_fc)
-
-    # Reindex to align with the global quarterly dates, forward filling to handle missing data
-    resampled_series_fc = country_series_fc.reindex(global_dates_fc, method='ffill')
-
-    # Store the resampled series in the dictionary
-    resampled_series_data_fc[sheet] = resampled_series_fc.values
-
-# Convert the resampled data into a matrix for easier processing
-num_countries_fc = len(sheet_names)
-num_quarters_fc = len(global_dates_fc)
-time_series_matrix_fc = np.vstack([resampled_series_data_fc[sheet] for sheet in sheet_names])
-
-# Initialize matrices to store mean DTW-based asymmetry for each country at each time point
-asymmetry_matrix_fc = np.full((num_countries_fc, num_quarters_fc), np.nan)
-pairwise_asymmetry_matrix_fc = np.full((num_countries_fc, num_countries_fc, num_quarters_fc), np.nan)
-
-for country_idx_fc in range(num_countries_fc):
-    # First valid data point for this country
-    country_start_idx = np.where(~np.isnan(time_series_matrix_fc[country_idx_fc, :]))[0][0]
-
-    for t in range(country_start_idx, num_quarters_fc):
-        weighted_dtw_distances_fc = []
-        weights_fc = []
-
-        for other_country_idx_fc in range(num_countries_fc):
-            if other_country_idx_fc == country_idx_fc:
-                continue
-
-            # Get the start index for the other country
-            other_valid_indices = np.where(~np.isnan(time_series_matrix_fc[other_country_idx_fc, :]))[0]
-            if len(other_valid_indices) == 0:
-                continue
-            other_start_idx = other_valid_indices[0]
-
-            # Retrieve cycle durations (assumed to be in quarters)
-            avg_cycle_dur1 = cycle_avg.loc[sheet_names[country_idx_fc], "Min_Distance_FCycle"]
-            avg_cycle_dur2 = cycle_avg.loc[sheet_names[other_country_idx_fc], "Min_Distance_FCycle"]
-
-            # Compute average cycle (in quarters)
-            avg_cycle_fc = int(((avg_cycle_dur1 * 4) + (avg_cycle_dur2 * 4)) / 2)
-
-            # Determine the earliest eligible time index for computing DTW:
-            required_t = max(country_start_idx, other_start_idx) + avg_cycle_fc
-
-            # Only compute DTW if we've reached the required time index:
-            if t < required_t:
-                continue
-
-            # Define the window as the last 'avg_cycle' observations ending at time t.
-            window_length = avg_cycle_fc  # window_length is the average cycle in quarters
-            window_start = t - window_length + 1
-
-            # Extract the local windows from both series and remove NaNs
-            ts_country = time_series_matrix_fc[country_idx_fc, window_start: t + 1]
-            ts_other = time_series_matrix_fc[other_country_idx_fc, window_start: t + 1]
-            ts_country = ts_country[~np.isnan(ts_country)]
-            ts_other = ts_other[~np.isnan(ts_other)]
-
-            # Compute DTW only if both windows have data
-            if len(ts_country) > 0 and len(ts_other) > 0:
-                dtw_distance = dtw(ts_country, ts_other)
-
-                 # Store the individual pairwise DTW distance
-                pairwise_asymmetry_matrix_fc[country_idx_fc, other_country_idx_fc, t] = dtw_distance
-
-                # Store the weighted distance
-                weighted_dtw_distances_fc.append(dtw_distance)
-
-                # Use GDP for weighting
-                gdp_focal = gdp_data[sheet_names[country_idx_fc]].iloc[t]
-                gdp_other = gdp_data[sheet_names[other_country_idx_fc]].iloc[t]
-                combined_weight = gdp_focal + gdp_other
-                weights_fc.append(combined_weight)
-
-        # Normalize the weights and store the weighted average
-        if weights_fc:
-            weights_array = np.array(weights_fc)
-            normalized_weights_fc = np.array(weights_array) / np.sum(weights_array)
-            dtw_array = np.array(weighted_dtw_distances_fc).flatten()
-            asymmetry_matrix_fc[country_idx_fc, t] = np.sum(dtw_array * normalized_weights_fc)
-
-# Find the first non-NaN entry for each country in the asymmetry_matrix
-first_data_indices_fc = [
-    np.where(~np.isnan(asymmetry_matrix_fc[country_idx_fc, :]))[0][0]
-    for country_idx_fc in range(num_countries_fc)
-]
-
-# Sort countries by their first available DTW date
-sorted_indices_fc = np.argsort(first_data_indices_fc)
-
-# Reorder the asymmetry matrix and country names for plotting based on sorted indices
-sorted_asymmetry_matrix_fc = asymmetry_matrix_fc[sorted_indices_fc]
-sorted_sheet_names_fc = [sheet_names[idx_f] for idx_f in sorted_indices_fc]
-
-asymmetry_matrix_plot_fc = np.nan_to_num(sorted_asymmetry_matrix_fc, nan=0)
-asymmetry_matrix_plot_fc = np.ma.masked_equal(asymmetry_matrix_plot_fc, 0)
-
-smoothed_matrix_fc = np.copy(sorted_asymmetry_matrix_fc)
-
-# Apply a Gaussian filter along the time axis
-for i in range(smoothed_matrix_fc.shape[0]):
-    row = smoothed_matrix_fc[i, :]
-    smoothed_row = gaussian_filter(row, sigma=8, mode='nearest')
-    smoothed_matrix_fc[i, :] = smoothed_row
-
-# Convert dates to years for labeling on the x-axis
-year_labels_fc = [d.year for d in global_dates_fc]  # Extract only the year for each quarter
-xaxis_ticks_fc = np.arange(0, num_quarters_fc, 10)
-xaxis_labels_fc = [year_labels_fc[i] for i in xaxis_ticks_fc]
-
-# Set up for 3D surface plot with sorted data
-x_axis_fc = np.arange(num_quarters_fc)  # Time on the x-axis
-y_axis_fc = sorted_sheet_names_fc  # Use sorted country names on the y-axis
-
-# Create the meshgrid for the 3D surface plot
-x_grid_fc, y_grid_fc = np.meshgrid(np.arange(num_quarters_fc), np.arange(num_countries_fc))
-
 # Create the 3D surface plot using Plotly
 darker_purples = [
     [0.0, 'rgb(188, 189, 220)'],
@@ -789,6 +663,12 @@ with button_index.container():
 
 
 # Load the cycle data for all countries (from all sheets in the Excel file)
+excel_path = os.path.join(base_dir, 'Data_Final', 'Country_Cycle_Data', 'Cycle_Data.xlsx')
+# Load the Excel file
+excel_data = pd.ExcelFile(excel_path, engine='openpyxl')
+sheet_names = excel_data.sheet_names
+
+
 cycle_data = {}
 for country in sheet_names:
     df_cycle = pd.read_excel(excel_data, sheet_name=country)
@@ -840,6 +720,17 @@ with col1_2d:
             gridwidth=1,
             zeroline=False
         ),
+        annotations=[
+        dict(
+            x=1.15,
+            y=1.05,
+            xref="paper",
+            yref="paper",
+            text="Click to select/deselect countries",
+            showarrow=False,
+            font=dict(size=12, color="black")
+        )
+        ],
         #template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
@@ -882,6 +773,17 @@ with col2_2d:
             gridwidth=1,
             zeroline=False
         ),
+        annotations=[
+        dict(
+            x=1.15,
+            y=1.05,
+            xref="paper",
+            yref="paper",
+            text="Click to select/deselect countries",
+            showarrow=False,
+            font=dict(size=12, color="black")
+        )
+    ],
         #template='plotly_white',
         plot_bgcolor='white',
         paper_bgcolor='white',
@@ -892,18 +794,3 @@ with col2_2d:
     st.plotly_chart(fig_fc, use_container_width=False)
 
 
-# Save the computed matrices, indices, and any other data you need for display.
-precomputed = {
-    "asymmetry_matrix_bc": asymmetry_matrix_bc,
-    "asymmetry_matrix_fc": asymmetry_matrix_fc,
-    "index_bc": index_bc,
-    "index_fc": index_fc,
-    "composite_divergence_series_mean": composite_divergence_series_mean,
-    "global_dates_bc": global_dates_bc,
-    "sorted_sheet_names_bc": sorted_sheet_names_bc,
-    # … include any other intermediate arrays needed for plotting (e.g., smoothed_matrix_bc, smoothed_matrix_fc)
-}
-
-output_path = os.path.join(os.path.dirname(__file__), 'Data_Final', 'precomputed_data.pkl')
-with open(output_path, 'wb') as f:
-    pickle.dump(precomputed, f)
