@@ -1,5 +1,8 @@
 name: Scheduled Empty Commit
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -13,11 +16,10 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@github.com"
 
       - name: Create an empty commit and push
         run: |
           git commit --allow-empty -m "Scheduled empty commit $(date)"
           git push
-
