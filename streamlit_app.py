@@ -49,6 +49,12 @@ st.markdown(
     [data-testid="column"] {
     overflow: visible !important;
     }
+    div[class^="_container_1upux"] {
+        display: none !important;
+    }
+    footer {
+        display: none !important;
+    }
     </style>
     """,
     unsafe_allow_html=True
