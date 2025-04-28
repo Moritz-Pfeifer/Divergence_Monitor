@@ -151,8 +151,8 @@ st.markdown(
     """
         <p>
         <a id="ref-bugdalle-pfeifer-2025"></a>
-        Bugdalle, T., Pfeifer, M. (2025). A Tale of Two Cycles: Business and Financial Cycle
-        Synchronization in the Euro Area. arXiv preprint.
+        Bugdalle, T., Pfeifer, M. (2025). Warpings in time: Business and financial cycle
+        synchronization in the euro area. arXiv preprint.
         </p>
         <p>
         <a id="ref-sakoe-1978"></a>
@@ -162,7 +162,7 @@ st.markdown(
         </p>
         <p>
         <a id="ref-mundell-1961"></a>
-        Mundell, R. (1961). A Theory of Optimal Currency Areas. 
+        Mundell, R. (1961). A theory of optimal currency areas. 
         <em>American Economic Review, 51</em>(4), 657–665.
         </p>
     </div>
