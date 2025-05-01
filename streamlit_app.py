@@ -389,8 +389,8 @@ df_events.columns = df_events.columns.str.strip().str.replace(" ", "")
 df_events['Date'] = pd.to_datetime(df_events['Date'])
 df_events = df_events[df_events['Date'] >= start_date]
 
-esm_df = df_events[df_events['ESM_Short'].notnull() & (df_events['ESM_Short'] != "")]
-esm_df = esm_df[esm_df['Date'] >= start_date]
+erm_df = df_events[df_events['ERM_Short'].notnull() & (df_events['ERM_Short'] != "")]
+erm_df = erm_df[erm_df['Date'] >= start_date]
 
 ump_df = df_events[df_events['UMP_Short'].notnull() & (df_events['UMP_Short'] != "")]
 ump_df = ump_df[ump_df['Date'] >= start_date]
@@ -402,23 +402,23 @@ y_max = max(index_fc_subset.max(), index_bc_subset.max(), divergence_index_subse
 # ---------------------------
 # Build a single scatter trace for ERM events
 # ---------------------------
-x_esm = []
-y_esm = []
-text_esm = []
-hovertext_esm = []
-marker_sizes_esm = []
-textpositions_esm = []
+x_erm = []
+y_erm = []
+text_erm = []
+hovertext_erm = []
+marker_sizes_erm = []
+textpositions_erm = []
 
 
-for row in esm_df.itertuples():
+for row in erm_df.itertuples():
     event_date = row.Date
-    short_label = row.ESM_Short        # no separate short vs. long in your data
-    long_label = row.ESM_Long        # same as short, or customize if you have another column
+    short_label = row.ERM_Short        # no separate short vs. long in your data
+    long_label = row.ERM_Long        # same as short, or customize if you have another column
 
     # Each event = two points + None to break the line
     # First point (bottom), second point (top), None to start new line
-    x_esm += [event_date, event_date, None]
-    y_esm += [y_min, y_max, None]
+    x_erm += [event_date, event_date, None]
+    y_erm += [y_min, y_max, None]
 
     # Decide text position based on label
     if short_label == "PT, ES":
@@ -427,21 +427,21 @@ for row in esm_df.itertuples():
         pos = "top center" 
 
     # Put the label on the top point only
-    text_esm      += ["", short_label, None]
-    textpositions_esm += ["top center", pos, "top center"]
-    hovertext_esm += ["", long_label, None]
-    marker_sizes_esm += [0, 0, 0]
+    text_erm      += ["", short_label, None]
+    textpositions_erm += ["top center", pos, "top center"]
+    hovertext_erm += ["", long_label, None]
+    marker_sizes_erm += [0, 0, 0]
 
-esm_trace = go.Scatter(
-    x=x_esm,
-    y=y_esm,
+erm_trace = go.Scatter(
+    x=x_erm,
+    y=y_erm,
     mode='lines+markers+text',
     line=dict(color='lightgrey', dash='dash'),
-    marker=dict(color=None, size=marker_sizes_esm),
-    text=text_esm,
+    marker=dict(color=None, size=marker_sizes_erm),
+    text=text_erm,
     textfont=dict(color='black'),
-    textposition=textpositions_esm,
-    hovertext=hovertext_esm,
+    textposition=textpositions_erm,
+    hovertext=hovertext_erm,
     hovertemplate="%{hovertext}<extra></extra>",
     name='ERM Events',
     visible=False  # start hidden
@@ -557,7 +557,7 @@ fig_index.update_layout(
             font=dict(color='black'),
             buttons=[
                 dict(
-                    label="Countries joining ESM",
+                    label="Countries joining ERM",
                     method="update",
                     args=[{"visible": [True, True, True, True, False,]}],
                 ),
