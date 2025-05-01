@@ -494,7 +494,7 @@ ump_trace = go.Scatter(
 )
 
 # Add the two event traces
-fig_index.add_trace(esm_trace)
+fig_index.add_trace(erm_trace)
 fig_index.add_trace(ump_trace)
 
 df_recession_path = os.path.join(base_dir, 'Data_Final', 'Recession_OCED.xlsx')
