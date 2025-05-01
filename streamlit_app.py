@@ -400,7 +400,7 @@ y_min = min(index_fc_subset.min(), index_bc_subset.min(), divergence_index_subse
 y_max = max(index_fc_subset.max(), index_bc_subset.max(), divergence_index_subset.max())
 
 # ---------------------------
-# Build a single scatter trace for ESM events
+# Build a single scatter trace for ERM events
 # ---------------------------
 x_esm = []
 y_esm = []
@@ -443,7 +443,7 @@ esm_trace = go.Scatter(
     textposition=textpositions_esm,
     hovertext=hovertext_esm,
     hovertemplate="%{hovertext}<extra></extra>",
-    name='ESM Events',
+    name='ERM Events',
     visible=False  # start hidden
 )
 
