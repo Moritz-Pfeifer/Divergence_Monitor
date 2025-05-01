@@ -1,7 +1,7 @@
 # Eurozone Divergence Monitor
 
 This repository contains the code and data for the paper:  
-Bugdalle, T., Pfeifer, M. (2025). “A Tale of Two Cycles: Business and Financial Cycle Synchronization in the Euro Area.”
+Bugdalle, T., Pfeifer, M. (2025). “Warpings in time: Business and financial cycle synchronization in the euro area.”
 
 It provides scripts for measuring, analyzing, and visualizing the degree of business and financial cycle synchronization across euro area member states.
 
