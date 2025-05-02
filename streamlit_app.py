@@ -152,7 +152,7 @@ st.markdown(
         <p>
         <a id="ref-bugdalle-pfeifer-2025"></a>
         Bugdalle, T., Pfeifer, M. (2025). Warpings in time: Business and financial cycle
-        synchronization in the euro area. arXiv preprint.
+        synchronization in the euro area. SSRN preprint. [Link to paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187)
         </p>
         <p>
         <a id="ref-sakoe-1978"></a>
