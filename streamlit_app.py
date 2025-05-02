@@ -151,7 +151,7 @@ html = """
 <div>
   <p><a id="ref-bugdalle-pfeifer-2025"></a>
     <strong>Bugdalle, T., Pfeifer, M. (2025).</strong>
-    Warpings in time: Business and financial cycle synchronization in the euro area. SSRN preprint.
+    Warpings in time: Business and financial cycle synchronization in the euro area. <em>SSRN</em> preprint.
     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187" target="_blank">Link to paper</a>
   </p>
   <p><a id="ref-sakoe-1978"></a>
