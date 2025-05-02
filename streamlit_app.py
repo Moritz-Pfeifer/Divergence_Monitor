@@ -147,28 +147,21 @@ un-filtered averages of these distances.
 
 
 st.markdown('<div class="sub-title">References</div>', unsafe_allow_html=True)
-st.markdown(
-    """
-        <p>
-        <a id="ref-bugdalle-pfeifer-2025"></a>
-        Bugdalle, T., Pfeifer, M. (2025). Warpings in time: Business and financial cycle
-        synchronization in the euro area. SSRN preprint. [Link to paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187)
-        </p>
-        <p>
-        <a id="ref-sakoe-1978"></a>
-        Sakoe, H., Chiba, S. (1978). Dynamic programming algorithm optimization 
-        for spoken word recognition. <em>IEEE Transactions on Acoustics, Speech, 
-        and Signal Processing, 26</em>(1), 43–49.
-        </p>
-        <p>
-        <a id="ref-mundell-1961"></a>
-        Mundell, R. (1961). A theory of optimal currency areas. 
-        <em>American Economic Review, 51</em>(4), 657–665.
-        </p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("""
+<p id="ref-bugdalle-pfeifer-2025"></p>
+**Bugdalle, T., Pfeifer, M. (2025).** Warpings in time: Business and financial cycle   
+synchronization in the euro area. SSRN preprint.  
+[🔗 Link to paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187)
+
+<p id="ref-sakoe-1978"></p>
+**Sakoe, H., Chiba, S. (1978).** Dynamic programming algorithm optimization for spoken word 
+recognition. *IEEE Transactions on Acoustics, Speech, and Signal Processing, 26*(1), 43–49.  
+[🔗 Link to paper](https://ieeexplore.ieee.org/document/1163055)
+
+<p id="ref-mundell-1961"></p>
+**Mundell, R. (1961).** A theory of optimal currency areas. *American Economic Review, 51*(4), 657–665.  
+[🔗 Link to paper](https://www.jstor.org/stable/1812792)
+""", unsafe_allow_html=True)
 
 
 
