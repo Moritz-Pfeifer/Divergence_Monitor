@@ -1,4 +1,4 @@
-[![Paper Page](https://img.shields.io/badge/Paper_Page-SSRN preprint-green)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187) 
+[![Paper Page](https://img.shields.io/badge/Paper_Page-SSRN%20preprint-green.svg)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187)
 # Eurozone Divergence Monitor
 
 This repository contains the code and data for the paper:  
