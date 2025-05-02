@@ -1,4 +1,4 @@
-[![Paper Page](https://img.shields.io/badge/Paper_Page-SSRN%20preprint-green.svg)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187) [![Website](https://img.shields.io/badge/Website-Live-Monitor-blue.svg)](https://moritz-pfeifer.github.io/eurozone-divergence-monitor/)
+[![Paper Page](https://img.shields.io/badge/Paper_Page-SSRN%20preprint-green.svg)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187) [![Website](https://img.shields.io/badge/Live–Monitor-blue.svg)](https://moritz-pfeifer.github.io/eurozone-divergence-monitor/)
 
 # Eurozone Divergence Monitor
 
