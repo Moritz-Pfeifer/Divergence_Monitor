@@ -3,7 +3,7 @@
 
 # Eurozone Divergence Monitor
 
-This repository contains the code and data for the paper:  
+This repository contains the code and data for the working paper:  
 Bugdalle, T., Pfeifer, M. (2025). [“Warpings in time: Business and financial cycle synchronization in the euro area.”](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187). SSRN preprint. 
 
 It provides scripts for measuring, analyzing, and visualizing the degree of business and financial cycle synchronization across euro area member states.
