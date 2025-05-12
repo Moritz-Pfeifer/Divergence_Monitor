@@ -361,7 +361,7 @@ fig_index.add_trace(go.Scatter(
     mode='lines',
     line=dict(color='rgb(106, 81, 163)', dash='dot'),
     opacity=0.5,
-    name='Financial Divergence',
+    name='Financial Cycle Divergence',
 ))
 
 fig_index.add_trace(go.Scatter(
@@ -370,7 +370,7 @@ fig_index.add_trace(go.Scatter(
     mode='lines',
     line=dict(color='rgb(33, 113, 181)', dash='dot'),
     opacity=0.5,
-    name='Business Divergence'
+    name='Business Cycle Divergence'
 ))
 
 fig_index.add_trace(go.Scatter(
