@@ -233,7 +233,7 @@ fig_bus.update_layout(
     plot_bgcolor='white',    
     paper_bgcolor='white', 
     title=dict(
-        text="Business cycle divergences",
+        text="Business Cycle Divergences",
         x=0.5, 
         xanchor="center",    
         font=dict(color='black')
@@ -297,7 +297,7 @@ fig_fin.update_layout(
     plot_bgcolor='white',    
     paper_bgcolor='white', 
     title=dict(
-        text="Financial cycle divergences",
+        text="Financial Cycle Divergences",
         x=0.5,  
         xanchor="center",    
         font=dict(color='black')
