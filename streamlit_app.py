@@ -320,7 +320,7 @@ fig_fin.update_layout(
             tickfont=dict(color='grey') 
         ),
         zaxis=dict(
-            title=dict(text="Mean DTW Distance", 
+            title=dict(text="Mean DTW distance", 
                        font=dict(color="grey")),
             showgrid=True,
             gridcolor='lightgrey',
