@@ -361,7 +361,7 @@ fig_index.add_trace(go.Scatter(
     mode='lines',
     line=dict(color='rgb(106, 81, 163)', dash='dot'),
     opacity=0.5,
-    name='Financial Cycle Divergence',
+    name='Financial cycle divergence',
 ))
 
 fig_index.add_trace(go.Scatter(
@@ -370,7 +370,7 @@ fig_index.add_trace(go.Scatter(
     mode='lines',
     line=dict(color='rgb(33, 113, 181)', dash='dot'),
     opacity=0.5,
-    name='Business Cycle Divergence'
+    name='Business cycle divergence'
 ))
 
 fig_index.add_trace(go.Scatter(
@@ -614,7 +614,7 @@ fig_index.update_layout(
         tickfont=dict(color='black'), 
         showgrid=True,
         gridcolor='whitesmoke', 
-        title=dict(text="Mean DTW Distance",  
+        title=dict(text="Mean DTW distance",  
                   font=dict(color="grey")
         )
     ),
