@@ -233,7 +233,7 @@ fig_bus.update_layout(
     plot_bgcolor='white',    
     paper_bgcolor='white', 
     title=dict(
-        text="Business Cycle Divergences",
+        text="Business cycle divergences",
         x=0.5, 
         xanchor="center",    
         font=dict(color='black')
@@ -256,7 +256,7 @@ fig_bus.update_layout(
             tickfont=dict(color='grey') 
         ),
         zaxis=dict(
-            title=dict(text="Mean DTW Distance",  
+            title=dict(text="Mean DTW distance",  
                       font=dict(color="grey")),
             showgrid=True,
             gridcolor='lightgrey',
@@ -297,7 +297,7 @@ fig_fin.update_layout(
     plot_bgcolor='white',    
     paper_bgcolor='white', 
     title=dict(
-        text="Financial Cycle Divergences",
+        text="Financial cycle divergences",
         x=0.5,  
         xanchor="center",    
         font=dict(color='black')
@@ -378,7 +378,7 @@ fig_index.add_trace(go.Scatter(
     y=divergence_index_subset,
     mode='lines',
     line=dict(color='rgb(0, 0, 0)'),
-    name='Divergence Index',
+    name='Divergence index',
 ))
 
 df_events_path = os.path.join(base_dir, 'Data_Final', 'Events.xlsx')
@@ -536,7 +536,7 @@ recession_indicator_trace = go.Scatter(
     y=[1], 
     mode='lines',
     line=dict(color='lightgrey', width=6),  
-    name='OECD Recession Indicator',
+    name='OECD recession indicator',
     showlegend=True,     
     visible=True        
 )
@@ -562,12 +562,12 @@ fig_index.update_layout(
                     args=[{"visible": [True, True, True, True, False,]}],
                 ),
                 dict(
-                    label="Unconventional Monetary Policy",
+                    label="Unconventional monetary policy",
                     method="update",
                     args=[{"visible": [True, True, True, False, True,]}],
                 ),
                 dict(
-                    label="Hide Events",
+                    label="Hide events",
                     method="update",
                     args=[{"visible": [True, True, True, False, False,]}],
                 ),
