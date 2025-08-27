@@ -1,25 +1,27 @@
 name: Scheduled Empty Commit
-
 permissions:
   contents: write
 
 on:
   schedule:
-    - cron: '0 */7 * * *'
+    # run every 10 hours (under the ~12h sleep window)
+    - cron: '0 */10 * * *'
 
 jobs:
-  empty_commit:
+  keep_awake:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+        with:
+          ref: main   
 
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions@github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Create an empty commit and push
+      - name: Create empty commit and push
         run: |
-          git commit --allow-empty -m "Scheduled empty commit $(date)"
-          git push
+          git commit --allow-empty -m "[keepalive] $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          git push origin HEAD:main
