@@ -11,16 +11,27 @@
     <div id="root"></div>
     <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.60.0/build/stlite.js"></script>
     <script>
+      const GITHUB_URL = "https://raw.githubusercontent.com/Moritz-Pfeifer/Divergence_Monitor/main/";
+
       stlite.mount({
-        requirements: ["pandas", "plotly", "numpy", "scipy"], // Add other requirements from your requirements.txt
+        // Added openpyxl here so Excel files can be read
+        requirements: ["pandas", "plotly", "numpy", "openpyxl"], 
         entrypoint: "streamlit_app.py",
         files: {
           "streamlit_app.py": {
-            url: "https://raw.githubusercontent.com/Moritz-Pfeifer/Divergence_Monitor/main/streamlit_app.py",
+            url: GITHUB_URL + "streamlit_app.py",
           },
-          // Map your data folder so the browser can find it
-          "Data_Final/Master_File_Cycles_29102024.csv": {
-            url: "https://raw.githubusercontent.com/Moritz-Pfeifer/Divergence_Monitor/main/Data_Final/Master_File_Cycles_29102024.csv"
+          "Data_Final/Data_web/precomputed_data.pkl": {
+            url: GITHUB_URL + "Data_Final/Data_web/precomputed_data.pkl",
+          },
+          "Data_Final/Events.xlsx": {
+            url: GITHUB_URL + "Data_Final/Events.xlsx",
+          },
+          "Data_Final/Recession_OCED.xlsx": {
+            url: GITHUB_URL + "Data_Final/Recession_OCED.xlsx",
+          },
+          "Data_Final/Country_Cycle_Data/Cycle_Data.xlsx": {
+            url: GITHUB_URL + "Data_Final/Country_Cycle_Data/Cycle_Data.xlsx",
           }
         },
       }, document.getElementById("root"));
