@@ -1,8 +1,7 @@
-[![Paper Page](https://img.shields.io/badge/Paper_Page-SSRN%20preprint-green.svg)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187) [![Website](https://img.shields.io/badge/Website-Live%20Monitor-blue.svg)](https://moritz-pfeifer.github.io/eurozone-divergence-monitor/)
+[![Paper Page](https://img.shields.io/badge/Paper_Page-SSRN%20preprint-green.svg)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187) [![Website](https://img.shields.io/badge/Website-Live%20Monitor-blue.svg)](https://moritz-pfeifer.github.io/Divergence_Monitor)
 
 
 # Eurozone Divergence Monitor
-
 This repository contains the code and data for the working paper:  
 Bugdalle, T., Pfeifer, M. (2025). [“Warpings in time: Business and financial cycle synchronization in the euro area.”](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5238187). SSRN preprint. 
 
