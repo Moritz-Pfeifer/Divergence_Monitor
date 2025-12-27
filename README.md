@@ -8,7 +8,7 @@ Bugdalle, T., Pfeifer, M. (2025). [“Warpings in time: Business and financial c
 
 It provides scripts for measuring, analyzing, and visualizing the degree of business and financial cycle synchronization across euro area member states.
 
-**Website:** [Eurozone Divergence Monitor](https://moritz-pfeifer.github.io/eurozone-divergence-monitor/)
+**Website:** [Eurozone Divergence Monitor](https://moritz-pfeifer.github.io/Divergence_Monitor)
 
 ---
 
