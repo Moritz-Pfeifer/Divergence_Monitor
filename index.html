@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Eurozone Divergence Monitor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.60.0/build/stlite.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.60.0/build/stlite.js"></script>
+    <script>
+      stlite.mount({
+        requirements: ["pandas", "plotly", "numpy", "scipy"], // Add other requirements from your requirements.txt
+        entrypoint: "streamlit_app.py",
+        files: {
+          "streamlit_app.py": {
+            url: "https://raw.githubusercontent.com/Moritz-Pfeifer/Divergence_Monitor/main/streamlit_app.py",
+          },
+          // Map your data folder so the browser can find it
+          "Data_Final/Master_File_Cycles_29102024.csv": {
+            url: "https://raw.githubusercontent.com/Moritz-Pfeifer/Divergence_Monitor/main/Data_Final/Master_File_Cycles_29102024.csv"
+          }
+        },
+      }, document.getElementById("root"));
+    </script>
+  </body>
+</html>
