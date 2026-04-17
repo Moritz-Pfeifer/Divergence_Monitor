@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Eurozone Divergence Monitor</title>
-    <script src="coi-serviceworker.min.js"></script>   <!-- ADD THIS LINE -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.60.0/build/stlite.css" />
+    <script src="coi-serviceworker.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@1.7.1/build/stlite.css" />
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.60.0/build/stlite.js"></script>
-    <script>
+    <script type="module">
+      import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@1.7.1/build/stlite.js";
+
       const GITHUB_URL = "https://raw.githubusercontent.com/Moritz-Pfeifer/Divergence_Monitor/main/";
 
-      stlite.mount({
-        // Added openpyxl here so Excel files can be read
-        requirements: ["pandas", "plotly", "numpy", "openpyxl"], 
+      mount({
+        requirements: ["pandas", "plotly", "numpy", "openpyxl"],
         entrypoint: "streamlit_app.py",
         files: {
           "streamlit_app.py": {
@@ -33,7 +33,7 @@
           },
           "Data_Final/Country_Cycle_Data/Cycle_Data.xlsx": {
             url: GITHUB_URL + "Data_Final/Country_Cycle_Data/Cycle_Data.xlsx",
-          }
+          },
         },
       }, document.getElementById("root"));
     </script>
